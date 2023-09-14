@@ -1,4 +1,4 @@
-from libraries import *
+from assets.libraries import *
 
 
 dash.register_page(__name__, path='/')

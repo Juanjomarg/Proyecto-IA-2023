@@ -1,4 +1,4 @@
-from libraries import *
+from assets.libraries import *
 
 navbar = dbc.Navbar(
     dbc.Container(
