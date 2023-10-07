@@ -1,5 +1,5 @@
 from assets.libraries import *
-from assets.comps import *
+from assets.navbar import *
 
 app = dash.Dash(
     __name__,
@@ -11,7 +11,6 @@ server=app.server
 app.layout = dbc.Container(
     [
         navbar,
-        sidebar,
         html.Div(
             [
                 dash.page_container
