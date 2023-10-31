@@ -2,4 +2,7 @@
 .container-fluid{
     padding:0rem;
     margin: 0rem;
+    background: linear-gradient(90deg, rgba(92,69,143,1) 0%, rgba(31,132,178,1) 46%, rgba(33,196,140,1) 100%);
+    background-size: cover; /* Make the background image cover the entire page */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
 };

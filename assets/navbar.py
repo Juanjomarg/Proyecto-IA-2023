@@ -24,7 +24,7 @@ navbar = dbc.Navbar(
                 dbc.Row(
                     [
                         dbc.Col(html.Img(src=PLOTLY_LOGO, height="30px")),
-                        dbc.Col(dbc.NavbarBrand("Navbar", className="ms-2")),
+                        dbc.Col(dbc.NavbarBrand("Navbar", className="ms-2", style={'color':'whitesmoke'})),
                     ],
                     align="center",
                     className="g-0",
@@ -41,8 +41,8 @@ navbar = dbc.Navbar(
             ),
         ]
     ),
-    color="dark",
-    dark=True,
+    color="transparent",
+    style={"height": "6em"}
 )
 
 

@@ -5,33 +5,48 @@ from assets.preprocess import *
 
 dash.register_page(__name__, path='/')
 
-layout = html.Div([
-    
-    html.H1("Descubre si eres primavera o verano", style={'padding-top':'2em'}),
-    dbc.Container(
-        dbc.Row(
-            [
-                dbc.Col(
-                    id='col_drag_drop',
-                    children=[
-                        drag_and_drop,
-                    ],
-                    style={'width': '100%'},
-                ),
-                dbc.Col(
-                    id='col_img_drag_drop',
-                    children=[
-                        html.Div(
-                            id='output_image_upload',
-                        ),
-                    ],
-                    style={'width': '0%'},
-                ),
-            ]
-        ),
+layout = html.Div(
+    [
+    html.H5('Averigua si eres privamera, verano, otoño o invierno'),
+    dbc.Row(
+        [
+            dbc.Col(
+                id='col_drag_drop',
+                children=[
+                    drag_and_drop,
+                ],
+                style={'width': '100%'},
+            ),
+            dbc.Col(
+                id='col_img_drag_drop',
+                children=[
+                    html.Div(
+                        id='output_image_upload',
+                    ),
+                ],
+                style={'width': '0%'},
+            ),
+        ]
+    ),
 
-    )
-])
+    dbc.Row(
+        [
+            dbc.Col(
+                html.Div(
+                    [
+                        html.H1('test',style={
+                                'padding-top':'6em',
+                                'padding-bottom':'2em'
+                            }),
+                    ]
+                )
+            ),
+
+        ]
+    ),
+    ]
+),
+
 
 @dash.callback(Output('output_image_upload', 'children'),
                Output('col_drag_drop', 'style'),

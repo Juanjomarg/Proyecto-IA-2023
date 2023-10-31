@@ -4,7 +4,7 @@ drag_and_drop = html.Div([
     dcc.Upload(
         id='subir_imagen',
         children=html.Div([
-            html.A('Drag and Drop or Select Files')
+            html.A("¡Suéltalos aquí cual confeti digital!")
         ]),
         style={
             'width': '100%',
@@ -20,6 +20,7 @@ drag_and_drop = html.Div([
             'justify-content': 'center', # Centrar elementos horizontalmente
             'align-items': 'center', # Centrar elementos verticalmente
             'margin': 'auto',
+            'color':'whitesmoke',
         },
         multiple=False
     ),

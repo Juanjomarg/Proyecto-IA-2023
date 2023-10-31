@@ -5,6 +5,7 @@ import matplotlib as plt
 
 import dash
 import dash_bootstrap_components as dbc
+import dash_mantine_components as dmc
 from dash import html,Input,Output,State,dcc,dash_table
 
 import sklearn
