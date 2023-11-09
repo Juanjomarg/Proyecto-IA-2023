@@ -1,13 +1,9 @@
 import numpy as np
 import pandas as pd
-import matplotlib as plt
 
 
 import dash
 import dash_bootstrap_components as dbc
-import dash_mantine_components as dmc
 from dash import html,Input,Output,State,dcc,dash_table
 
-import sklearn
-from sklearn import datasets  
-from sklearn.model_selection import train_test_split  # Import a specific function
+
