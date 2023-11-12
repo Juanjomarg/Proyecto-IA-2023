@@ -7,7 +7,9 @@ dash.register_page(__name__, path='/')
 
 layout = html.Div(
     [
-    html.H5('Averigua si eres privamera, verano, otoño o invierno'),
+    html.H2('Descubre el tipo de colorimetría al que perteneces y vuélvete más fashionista 🥰',style={'text-align':'center','padding-top':'5rem','padding-bottom':'3rem','width':'45rem','margin-inline':'auto'}),
+    html.H1('DANOS UNA IMÁGEN TUYA',style={'text-align':'center'}),
+    html.H3('Y genera tu paleta de colores recomendados',style={'text-align':'center','padding-bottom':'3rem'}),
     dbc.Row(
         [
             dbc.Col(
@@ -29,21 +31,7 @@ layout = html.Div(
         ]
     ),
 
-    dbc.Row(
-        [
-            dbc.Col(
-                html.Div(
-                    [
-                        html.H1('test',style={
-                                'padding-top':'6em',
-                                'padding-bottom':'2em'
-                            }),
-                    ]
-                )
-            ),
 
-        ]
-    ),
     ]
 ),
 
