@@ -14,23 +14,21 @@ app.layout = dbc.Container(
         html.Div(
             dash.page_container,
             className="content",
-            style={'padding-left':'20em','padding-right':'20em'}
         ),
         html.Footer(
             children=[
                 dbc.Container(
                     [
-                        html.P('''De Colombia pal mundo''',style={'padding-top':'2em'}),
-                        html.P('''Desarrollado por: Juan José Martínez Guerrero'''),
-                        html.P('''Todos los derechos reservados'''),
                     ]
                 )
             ],
+            style={'position':'absolute','width':'100%','heigth':'500px','bottom':'0','left':'0'},
         ),
         html.Img(src='./static/images/color-scheme-left.svg',style={'position':'absolute','width':'500px','heigth':'500px','bottom':'0','left':'0'}),
         html.Img(src='./static/images/color-scheme-right.svg',style={'position':'absolute','width':'500px','heigth':'500px','bottom':'0','right':'0'}),
     ],
     fluid=True,
+    style={'height': '100vh'},
 )
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;900&display=swap');
 
 
 body {
@@ -11,30 +11,25 @@ h1, h2, h3, h4, h5, h6, P{
 }
 
 h1{
-    font-family: 'Montserrat', sans-serif;
     font-weight: 900;
-    color: whitesmoke;
+    font-size: 3rem;
 }
 
 h2{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 200;
-    color: whitesmoke;
+    font-weight: 300;
+    font-size: 2rem;
 }
 
 h3{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    color: whitesmoke;
+    font-weight: 900;
+    font-size: 1.5rem;
 }
 
 P{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 200;
-    color: whitesmoke;
+    font-weight: 500;
 }
 
-
-P,A{
-    font-size: .75rem;
-}
+.navbar-brand{
+    font-weight: 900;
+    font-size: 2rem;
+};
