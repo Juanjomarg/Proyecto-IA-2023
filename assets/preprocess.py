@@ -1,6 +1,8 @@
 from assets.libraries import *
 
 def preprocesar_img(contents):
+    print(type(contents))
+
     salida=html.Div(
         children=[
             html.Img(
