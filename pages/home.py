@@ -28,7 +28,8 @@ layout = html.Div(
                 ],
                 style={'width': '0%'},
             ),
-        ]
+        ],
+        style={'padding':'2rem'}
     ),
 
 

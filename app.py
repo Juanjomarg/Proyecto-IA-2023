@@ -27,8 +27,8 @@ app.layout = dbc.Container(
                 )
             ],
         ),
-        html.Img(src='./static/color-scheme-left.svg',style={'position':'absolute','width':'500px','heigth':'500px','bottom':'0','left':'0'}),
-        html.Img(src='./static/color-scheme-right.svg',style={'position':'absolute','width':'500px','heigth':'500px','bottom':'0','right':'0'}),
+        html.Img(src='./static/images/color-scheme-left.svg',style={'position':'absolute','width':'500px','heigth':'500px','bottom':'0','left':'0'}),
+        html.Img(src='./static/images/color-scheme-right.svg',style={'position':'absolute','width':'500px','heigth':'500px','bottom':'0','right':'0'}),
     ],
     fluid=True,
 )

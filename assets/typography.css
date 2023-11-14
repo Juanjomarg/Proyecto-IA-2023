@@ -1,14 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500;900&display=swap');
 
 
 body {
-    font-family: 'Press Start 2P';
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, P{
-    font-family: 'Press Start 2P';
+    font-family: 'Montserrat', sans-serif;
     color: whitesmoke;
 }
+
+h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: whitesmoke;
+}
+
+h2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    color: whitesmoke;
+}
+
+h3{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: whitesmoke;
+}
+
+P{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    color: whitesmoke;
+}
+
 
 P,A{
     font-size: .75rem;
