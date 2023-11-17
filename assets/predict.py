@@ -20,25 +20,42 @@ def predict_img(model,image):
     index=prediction.argmax()
     print(class_labels[index])
 
-    inv_long=''
+    inv_long='''Pertenecen a la estación a la estación invierno aquellas de piel, cabello y ojos oscuros.
+Piel: mujeres de tez blanca o de tez muy oscura (afroamericanas oscuras). En general no tienen rubor natural en las mejillas.
+Ojos: marrones.
+Cabello: suelen tener el cabello oscuro.
+'''
     inv_si=html.P('Felicidades, tu estacionalidad es el invierno, los colores con un croma neutral son mas lo tuyo')
     inv_no=html.P('Por otro lado intenta evitar los colores tierra y pasteles porque te pueden opacar')
 
-    ver_long=''
+    ver_long='''Pertenecen a la estación verano, las mujeres de piel blanca, ojos claros y cabello rubio o castaño claro.
+Piel: generalmente tienen una piel clara.
+Ojos: azules, verdes, pardos o grises.
+Cabello: en tonos claros, como el rubio, el color miel, y el castaño claro.
+'''
     ver_si=html.P('Felicidades, tu estacionalidad es verano, los colores que te favorecen aquellos que tienen un chroma bajo, opacos')
     ver_no=html.P('Por otro lado intenta evitar los colores con base amarilla, dorada y el negro')
 
-    pri_long=''
+    pri_long='''Pertenecen a la estación primavera, aquellas que tienen las siguientes características:
+Piel: generalmente tienen una piel clara (blanco-crema), con cierto matiz dorado (un tono melocotón muy claro). Las pecas y las mejillas rosadas son típicas de este grupo.
+Ojos: azules, verdes, pardos o grises.
+Cabello: generalmente en tonos claros, como el rubio, el color miel, y el castaño claro, e incluso algunos tonos cobres.
+'''
     pri_si=html.P('Felicidades, tu estacionalidad es la primavera, los colores vivos y brillantes son lo tuyo')
     pri_no=html.P('Por otro lado intenta evitar colores tierra, pastel porque pueden opacar la luz de tu rostro')
 
-    oto_long=''
-    oto_si=html.P('fff')
-    oto_no=html.P('fff')
+    oto_long='''Pertenecen a la estación a la estación otoño las de piel no tan oscura, cabello oscuro y ojos negros o marrones.
+Piel: tonalidad de piel dorada, con reflejos ámbar, melocotón y albaricoque. A veces tienen numerosas pecas en su piel.
+Ojos: castaños o verdes.
+Cabello: muchas pelirrojas y morenas de pelo castaño entran en este grupo.
+'''
+    oto_si=html.P('Felicidades, tu estacionalidad es la otoño. los colores azulados y brillantes son lo tuyo')
+    oto_no=html.P('Por otro lado intenta evitar los colores que tiendan hacia lo gris o los colores cafés')
 
-    else_long=''
-    else_si=html.P('Wow, tienes tremendo estilo, pero no logramos reconocer tu estación')
-    else_no=html.P('No reconocemos tu estación, pero por tu foto a tí todo te queda bien')
+    else_long='''Lastimosamente o por condiciones luninicas o porque tienes caracteristicas pertenecientes a multiples categorias, no nos fue posible identificar la estación a la que perteneces
+'''
+    else_si=html.P('Wow, tienes tremendo estilo')
+    else_no=html.P('por tu foto a tí todo te queda bien')
 
     ########################################################################
     # Invierno
