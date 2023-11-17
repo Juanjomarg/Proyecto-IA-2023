@@ -1,10 +1,25 @@
 from assets.libraries import *
-from assets.preprocess import *
+from assets.predict import *
+
+model_path= os.path.join('.','model','final_model.h5')
+
+model=tf.keras.models.load_model(model_path)
 
 lorem1='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce volutpat ipsum ac sapien varius fermentum. Aenean tincidunt risus vitae erat ultrices, sit amet tempor felis tempor. In vitae ante tincidunt, tincidunt risus vel, vestibulum leo. Aenean lobortis at lorem sed elementum. Donec mollis mauris lacus, sed mollis augue ornare sit amet. Vestibulum vel rutrum quam. Phasellus a arcu rutrum, tincidunt purus vitae, condimentum purus. Aliquam mattis faucibus eros.'
-lorem2='In hac habitasse platea dictumst. Aliquam et vestibulum erat. Aenean sed nibh sed arcu tristique sagittis eu at ligula. Pellentesque gravida in augue nec euismod. Sed hendrerit diam a eros sodales bibendum. Integer cursus ipsum eget magna lacinia, vel gravida felis imperdiet. Integer tristique posuere neque, id tempus leo auctor at. Vestibulum ut diam sit amet lacus mollis rhoncus dictum nec sem. Suspendisse dignissim mi ut mi molestie, scelerisque sodales justo varius. Vestibulum et metus diam. Mauris mauris libero, feugiat sed lobortis ut, pulvinar sit amet sapien. In cursus ipsum erat, quis pharetra tortor suscipit nec.'
 
 dash.register_page(__name__, path='/')
+
+common={
+    'width':'60px',
+    'height':'60px',
+    'border-radius': '20%',  # Creates a circle
+    'display': 'flex', # Flexbox
+    'textAlign': 'center', # Centrar texto horizontal
+    'justify-content': 'center', # Centrar elementos horizontalmente
+    'align-items': 'center', # Centrar elementos verticalmente
+    'margin':'10px',
+    'background':'#fff',
+}
 
 layout = dbc.Container(
     [
@@ -102,7 +117,7 @@ layout = dbc.Container(
                                                 'font-weight':'900',
                                             }
                                     ),
-                                    html.P(lorem1),
+                                    html.P(id='texto_si'),
                                 ]
                             )
                         ),
@@ -122,7 +137,7 @@ layout = dbc.Container(
                                                 'font-weight':'900',
                                             }
                                     ),
-                                    html.P(lorem2),
+                                    html.P(id='texto_no'),
                                 ]
                             )
                         ),
@@ -139,144 +154,37 @@ layout = dbc.Container(
                         [
                         dbc.Row(
                             dbc.Col(
-                                [
+                                id='favorecen',
+                                children=[
                                     html.Div(
-                                        [
-                                            html.P(
-                                                'fff',
-                                                style={
-                                                    'color':'black',
-                                                    'padding-top':'15px',
-                                                }
-                                                )
+                                        id='f1',
+                                        children=[
                                         ],
-                                        style={
-                                            'background':'#fff',
-                                            'width':'60px',
-                                            'height':'60px',
-                                            'border-radius': '20%',  # Creates a circle
-
-                                            'display': 'flex', # Flexbox
-                                            'textAlign': 'center', # Centrar texto horizontal
-                                            'justify-content': 'center', # Centrar elementos horizontalmente
-                                            'align-items': 'center', # Centrar elementos verticalmente
-                                            'margin':'10px'
-                                        }
                                     ),
                                     html.Div(
-                                        [
-                                            html.P(
-                                                'fff',
-                                                style={
-                                                    'color':'black',
-                                                    'padding-top':'15px',
-                                                }
-                                                )
+                                        id='f2',
+                                        children=[
                                         ],
-                                        style={
-                                            'background':'#fff',
-                                            'width':'60px',
-                                            'height':'60px',
-                                            'border-radius': '20%',  # Creates a circle
-
-                                            'display': 'flex', # Flexbox
-                                            'textAlign': 'center', # Centrar texto horizontal
-                                            'justify-content': 'center', # Centrar elementos horizontalmente
-                                            'align-items': 'center', # Centrar elementos verticalmente
-                                            'margin':'10px'
-                                        }
                                     ),
                                     html.Div(
-                                        [
-                                            html.P(
-                                                'fff',
-                                                style={
-                                                    'color':'black',
-                                                    'padding-top':'15px',
-                                                }
-                                                )
+                                        id='f3',
+                                        children=[
                                         ],
-                                        style={
-                                            'background':'#fff',
-                                            'width':'60px',
-                                            'height':'60px',
-                                            'border-radius': '20%',  # Creates a circle
-
-                                            'display': 'flex', # Flexbox
-                                            'textAlign': 'center', # Centrar texto horizontal
-                                            'justify-content': 'center', # Centrar elementos horizontalmente
-                                            'align-items': 'center', # Centrar elementos verticalmente
-                                            'margin':'10px'
-                                        }
                                     ),
                                     html.Div(
-                                        [
-                                            html.P(
-                                                'fff',
-                                                style={
-                                                    'color':'black',
-                                                    'padding-top':'15px',
-                                                }
-                                                )
+                                        id='f4',
+                                        children=[
                                         ],
-                                        style={
-                                            'background':'#fff',
-                                            'width':'60px',
-                                            'height':'60px',
-                                            'border-radius': '20%',  # Creates a circle
-
-                                            'display': 'flex', # Flexbox
-                                            'textAlign': 'center', # Centrar texto horizontal
-                                            'justify-content': 'center', # Centrar elementos horizontalmente
-                                            'align-items': 'center', # Centrar elementos verticalmente
-                                            'margin':'10px'
-                                        }
                                     ),
                                     html.Div(
-                                        [
-                                            html.P(
-                                                'fff',
-                                                style={
-                                                    'color':'black',
-                                                    'padding-top':'15px',
-                                                }
-                                                )
+                                        id='f5',
+                                        children=[
                                         ],
-                                        style={
-                                            'background':'#fff',
-                                            'width':'60px',
-                                            'height':'60px',
-                                            'border-radius': '20%',  # Creates a circle
-
-                                            'display': 'flex', # Flexbox
-                                            'textAlign': 'center', # Centrar texto horizontal
-                                            'justify-content': 'center', # Centrar elementos horizontalmente
-                                            'align-items': 'center', # Centrar elementos verticalmente
-                                            'margin':'10px'
-                                        }
                                     ),
                                     html.Div(
-                                        [
-                                            html.P(
-                                                'fff',
-                                                style={
-                                                    'color':'black',
-                                                    'padding-top':'15px',
-                                                }
-                                                )
+                                        id='f6',
+                                        children=[
                                         ],
-                                        style={
-                                            'background':'#fff',
-                                            'width':'60px',
-                                            'height':'60px',
-                                            'border-radius': '20%',  # Creates a circle
-
-                                            'display': 'flex', # Flexbox
-                                            'textAlign': 'center', # Centrar texto horizontal
-                                            'justify-content': 'center', # Centrar elementos horizontalmente
-                                            'align-items': 'center', # Centrar elementos verticalmente
-                                            'margin':'10px'
-                                        }
                                     ),
                                 ],
                                 style={
@@ -294,144 +202,37 @@ layout = dbc.Container(
                         [
                         dbc.Row(
                             dbc.Col(
-                                [
+                                id='no_favorecen',
+                                children=[
                                     html.Div(
-                                        [
-                                            html.P(
-                                                'fff',
-                                                style={
-                                                    'color':'black',
-                                                    'padding-top':'15px',
-                                                }
-                                                )
+                                        id='n1',
+                                        children=[
                                         ],
-                                        style={
-                                            'background':'#fff',
-                                            'width':'60px',
-                                            'height':'60px',
-                                            'border-radius': '20%',  # Creates a circle
-
-                                            'display': 'flex', # Flexbox
-                                            'textAlign': 'center', # Centrar texto horizontal
-                                            'justify-content': 'center', # Centrar elementos horizontalmente
-                                            'align-items': 'center', # Centrar elementos verticalmente
-                                            'margin':'10px'
-                                        }
                                     ),
                                     html.Div(
-                                        [
-                                            html.P(
-                                                'fff',
-                                                style={
-                                                    'color':'black',
-                                                    'padding-top':'15px',
-                                                }
-                                                )
+                                        id='n2',
+                                        children=[
                                         ],
-                                        style={
-                                            'background':'#fff',
-                                            'width':'60px',
-                                            'height':'60px',
-                                            'border-radius': '20%',  # Creates a circle
-
-                                            'display': 'flex', # Flexbox
-                                            'textAlign': 'center', # Centrar texto horizontal
-                                            'justify-content': 'center', # Centrar elementos horizontalmente
-                                            'align-items': 'center', # Centrar elementos verticalmente
-                                            'margin':'10px'
-                                        }
                                     ),
                                     html.Div(
-                                        [
-                                            html.P(
-                                                'fff',
-                                                style={
-                                                    'color':'black',
-                                                    'padding-top':'15px',
-                                                }
-                                                )
+                                        id='n3',
+                                        children=[
                                         ],
-                                        style={
-                                            'background':'#fff',
-                                            'width':'60px',
-                                            'height':'60px',
-                                            'border-radius': '20%',  # Creates a circle
-
-                                            'display': 'flex', # Flexbox
-                                            'textAlign': 'center', # Centrar texto horizontal
-                                            'justify-content': 'center', # Centrar elementos horizontalmente
-                                            'align-items': 'center', # Centrar elementos verticalmente
-                                            'margin':'10px'
-                                        }
                                     ),
                                     html.Div(
-                                        [
-                                            html.P(
-                                                'fff',
-                                                style={
-                                                    'color':'black',
-                                                    'padding-top':'15px',
-                                                }
-                                                )
+                                        id='n4',
+                                        children=[
                                         ],
-                                        style={
-                                            'background':'#fff',
-                                            'width':'60px',
-                                            'height':'60px',
-                                            'border-radius': '20%',  # Creates a circle
-
-                                            'display': 'flex', # Flexbox
-                                            'textAlign': 'center', # Centrar texto horizontal
-                                            'justify-content': 'center', # Centrar elementos horizontalmente
-                                            'align-items': 'center', # Centrar elementos verticalmente
-                                            'margin':'10px'
-                                        }
                                     ),
                                     html.Div(
-                                        [
-                                            html.P(
-                                                'fff',
-                                                style={
-                                                    'color':'black',
-                                                    'padding-top':'15px',
-                                                }
-                                                )
+                                        id='n5',
+                                        children=[
                                         ],
-                                        style={
-                                            'background':'#fff',
-                                            'width':'60px',
-                                            'height':'60px',
-                                            'border-radius': '20%',  # Creates a circle
-
-                                            'display': 'flex', # Flexbox
-                                            'textAlign': 'center', # Centrar texto horizontal
-                                            'justify-content': 'center', # Centrar elementos horizontalmente
-                                            'align-items': 'center', # Centrar elementos verticalmente
-                                            'margin':'10px'
-                                        }
                                     ),
                                     html.Div(
-                                        [
-                                            html.P(
-                                                'fff',
-                                                style={
-                                                    'color':'black',
-                                                    'padding-top':'15px',
-                                                }
-                                                )
+                                        id='n6',
+                                        children=[
                                         ],
-                                        style={
-                                            'background':'#fff',
-                                            'width':'60px',
-                                            'height':'60px',
-                                            'border-radius': '20%',  # Creates a circle
-
-                                            'display': 'flex', # Flexbox
-                                            'textAlign': 'center', # Centrar texto horizontal
-                                            'justify-content': 'center', # Centrar elementos horizontalmente
-                                            'align-items': 'center', # Centrar elementos verticalmente
-                                            'margin':'10px'
-                                        }
                                     ),
                                 ],
                                 style={
@@ -455,21 +256,42 @@ layout = dbc.Container(
 ),
 
 
-@dash.callback(Output('output_image_upload', 'children'),
-               Output('output_drag_drop', 'style'),
-               Output('output_imagen', 'style'),
+@dash.callback(
+        Output('output_image_upload', 'children'),
+        Output('output_drag_drop', 'style'),
+        Output('output_imagen', 'style'),
 
-              Input('subir_imagen', 'contents'),
-              State('subir_imagen', 'filename'),
-              State('subir_imagen', 'last_modified'))
-def update_output(content, filename, date_upload):
+        Output('n1', 'style'),
+        Output('n2', 'style'),
+        Output('n3', 'style'),
+        Output('n4', 'style'),
+        Output('n5', 'style'),
+        Output('n6', 'style'),
+
+        Output('f1', 'style'),
+        Output('f2', 'style'),
+        Output('f3', 'style'),
+        Output('f4', 'style'),
+        Output('f5', 'style'),
+        Output('f6', 'style'),
+
+        Output('texto_si', 'children'),
+        Output('texto_no', 'children'),
+        
+
+        Input('subir_imagen', 'contents')
+)
+def update_output(content):
     if content is None:
+        f1,f2,f3,f4,f5,f6,n1,n2,n3,n4,n5,n6=common
+        si='Texto generico Si'
+        no='Texto generico No'
         children=[
         ]
-        return children, {'display': 'inline'}, {'display': 'none'}
-        #return children, {'display': 'none'}, {'display': 'inline'}
+        return children, {'display': 'inline'}, {'display': 'none'},f1,f2,f3,f4,f5,f6,n1,n2,n3,n4,n5,n6,si,no
     else:
+        img,f1,f2,f3,f4,f5,f6,n1,n2,n3,n4,n5,n6,si,no=predict_img(model,content)
         children=[
-            preprocesar_img(content)
+            img
         ]
-        return children, {'display': 'none'}, {'display': 'inline'}
+        return children, {'display': 'none'}, {'display': 'inline'},f1,f2,f3,f4,f5,f6,n1,n2,n3,n4,n5,n6,si,no
