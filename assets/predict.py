@@ -1,29 +1,6 @@
 from assets.libraries import *
 
-    
-
-def mostrar_imagen(contents):
-    salida= html.Div(
-        html.Img(
-            src=contents,
-            className='custom-image',
-            style={
-                'width': '100%',
-                'height': '300px',
-                'object-fit': 'cover',                
-                'display': 'flex', # Flexbox
-                'textAlign': 'center', # Centrar texto horizontal
-                'justify-content': 'center', # Centrar elementos horizontalmente
-                'align-items': 'center', # Centrar elementos verticalmente
-                'margin': 'auto',
-            }
-        ),
-        className='custom-div'
-    )
-    return salida
-
 def decode_img(contents):
-    print(type(contents))
     formatted_content= contents.replace('data:image/png;base64,','')
 
     decoded = base64.b64decode(formatted_content)
@@ -43,27 +20,26 @@ def predict_img(model,image):
     index=prediction.argmax()
     print(class_labels[index])
 
-    inv=html.P('Felicidades, tu estacionalidad es el invierno, los colores con un croma neutral son mas lo tuyo',)
-    inv_no=html.P('Por otro lado intenta evitar los colores tierra y pasteles porque te pueden opacar',)
+    inv=html.P('Felicidades, tu estacionalidad es el invierno, los colores con un croma neutral son mas lo tuyo')
+    inv_no=html.P('Por otro lado intenta evitar los colores tierra y pasteles porque te pueden opacar')
 
-    ver=html.P('Felicidades, tu estacionalidad es verano, los colores que te favorecen aquellos que tienen un chroma bajo, opacos',)
-    ver_no=html.P('Por otro lado intenta evitar los colores con base amarilla, dorada y el negro',)
+    ver=html.P('Felicidades, tu estacionalidad es verano, los colores que te favorecen aquellos que tienen un chroma bajo, opacos')
+    ver_no=html.P('Por otro lado intenta evitar los colores con base amarilla, dorada y el negro')
 
-    pri=html.P('Felicidades, tu estacionalidad es la primavera, los colores vivos y brillantes son lo tuyo',)
-    pri_no=html.P('Por otro lado intenta evitar colores tierra, pastel porque pueden opacar la luz de tu rostro',)
+    pri=html.P('Felicidades, tu estacionalidad es la primavera, los colores vivos y brillantes son lo tuyo')
+    pri_no=html.P('Por otro lado intenta evitar colores tierra, pastel porque pueden opacar la luz de tu rostro')
 
-    oto=html.P('fff',)
-    oto_no=html.P('fff',)
+    oto=html.P('fff')
+    oto_no=html.P('fff')
 
-    else_si=html.P('Wow, tienes tremendo estilo, pero no logramos reconocer tu estación',)
-    else_no=html.P('No reconocemos tu estación, pero por tu foto a tí todo te queda bien',)
+    else_si=html.P('Wow, tienes tremendo estilo, pero no logramos reconocer tu estación')
+    else_no=html.P('No reconocemos tu estación, pero por tu foto a tí todo te queda bien')
 
     ########################################################################
     # Invierno
     ########################################################################
 
     if class_labels[index]=='Invierno': # Listo
-        print('entro')
         si=inv
         no=inv_no
         f1={
@@ -763,23 +739,19 @@ def predict_img(model,image):
     # Imagen
     ########################################################################
     
-    img= html.Div(
-        html.Img(
-            src=image,
-            className='custom-image',
-            style={
-                'width': '100%',
-                'height': '300px',
-                'object-fit': 'cover',
-                
-                'display': 'flex', # Flexbox
-                'textAlign': 'center', # Centrar texto horizontal
-                'justify-content': 'center', # Centrar elementos horizontalmente
-                'align-items': 'center', # Centrar elementos verticalmente
-                'margin': 'auto',
-            }
-        ),
-        className='custom-div'
+    img=html.Img(
+        src=image,
+        style={
+            'width': '100%',
+            'height': '300px',
+            'object-fit': 'cover',
+            
+            'display': 'flex', # Flexbox
+            'textAlign': 'center', # Centrar texto horizontal
+            'justify-content': 'center', # Centrar elementos horizontalmente
+            'align-items': 'center', # Centrar elementos verticalmente
+            'margin': 'auto',
+        }
     )
 
     return img,f1,f2,f3,f4,f5,f6,n1,n2,n3,n4,n5,n6,si,no

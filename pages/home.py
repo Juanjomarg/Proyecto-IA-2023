@@ -9,18 +9,6 @@ lorem1='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce volutpat 
 
 dash.register_page(__name__, path='/')
 
-common={
-    'width':'60px',
-    'height':'60px',
-    'border-radius': '20%',  # Creates a circle
-    'display': 'flex', # Flexbox
-    'textAlign': 'center', # Centrar texto horizontal
-    'justify-content': 'center', # Centrar elementos horizontalmente
-    'align-items': 'center', # Centrar elementos verticalmente
-    'margin':'10px',
-    'background':'#fff',
-}
-
 layout = dbc.Container(
     [
     html.Div(
@@ -283,11 +271,23 @@ layout = dbc.Container(
 )
 def update_output(content):
     if content is None:
-        f1,f2,f3,f4,f5,f6,n1,n2,n3,n4,n5,n6=common
+        children=[]
+        common_dict = {
+            'width': '60px',
+            'height': '60px',
+            'border-radius': '20%',
+            'display': 'flex',
+            'textAlign': 'center',
+            'justify-content': 'center',
+            'align-items': 'center',
+            'margin': '10px',
+            'background': '#fff',
+        }
+
+        f1 = f2 = f3 = f4 = f5 = f6 = n1 = n2 = n3 = n4 = n5 = n6 = common_dict
         si='Texto generico Si'
         no='Texto generico No'
-        children=[
-        ]
+        
         return children, {'display': 'inline'}, {'display': 'none'},f1,f2,f3,f4,f5,f6,n1,n2,n3,n4,n5,n6,si,no
     else:
         img,f1,f2,f3,f4,f5,f6,n1,n2,n3,n4,n5,n6,si,no=predict_img(model,content)
