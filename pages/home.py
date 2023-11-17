@@ -4,9 +4,6 @@ from assets.predict import *
 model_path= os.path.join('.','model','final_model.h5')
 
 model=tf.keras.models.load_model(model_path)
-
-lorem1='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce volutpat ipsum ac sapien varius fermentum. Aenean tincidunt risus vitae erat ultrices, sit amet tempor felis tempor. In vitae ante tincidunt, tincidunt risus vel, vestibulum leo. Aenean lobortis at lorem sed elementum. Donec mollis mauris lacus, sed mollis augue ornare sit amet. Vestibulum vel rutrum quam. Phasellus a arcu rutrum, tincidunt purus vitae, condimentum purus. Aliquam mattis faucibus eros.'
-
 dash.register_page(__name__, path='/')
 
 layout = dbc.Container(
@@ -69,7 +66,7 @@ layout = dbc.Container(
                             html.H1('Hola, lindura 😍',
                                     style={'padding-top':'5rem','padding-bottom':'1rem'}
                             ),
-                            html.P(lorem1,style={'text-align':'justify'}),
+                            html.P(id='descriptivo_largo',style={'text-align':'justify'}),
                             html.H3('...por lo tanto:'),
                         ],
                         width=6
@@ -263,10 +260,10 @@ layout = dbc.Container(
         Output('f5', 'style'),
         Output('f6', 'style'),
 
+        Output('descriptivo_largo', 'children'),
         Output('texto_si', 'children'),
         Output('texto_no', 'children'),
         
-
         Input('subir_imagen', 'contents')
 )
 def update_output(content):
@@ -285,13 +282,14 @@ def update_output(content):
         }
 
         f1 = f2 = f3 = f4 = f5 = f6 = n1 = n2 = n3 = n4 = n5 = n6 = common_dict
+        long='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce volutpat ipsum ac sapien varius fermentum. Aenean tincidunt risus vitae erat ultrices, sit amet tempor felis tempor. In vitae ante tincidunt, tincidunt risus vel, vestibulum leo. Aenean lobortis at lorem sed elementum. Donec mollis mauris lacus, sed mollis augue ornare sit amet. Vestibulum vel rutrum quam. Phasellus a arcu rutrum, tincidunt purus vitae, condimentum purus. Aliquam mattis faucibus eros.'
         si='Texto generico Si'
         no='Texto generico No'
         
-        return children, {'display': 'inline'}, {'display': 'none'},f1,f2,f3,f4,f5,f6,n1,n2,n3,n4,n5,n6,si,no
+        return children, {'display': 'inline'}, {'display': 'none'},f1,f2,f3,f4,f5,f6,n1,n2,n3,n4,n5,n6,long,si,no
     else:
-        img,f1,f2,f3,f4,f5,f6,n1,n2,n3,n4,n5,n6,si,no=predict_img(model,content)
+        img,f1,f2,f3,f4,f5,f6,n1,n2,n3,n4,n5,n6,long,si,no=predict_img(model,content)
         children=[
             img
         ]
-        return children, {'display': 'none'}, {'display': 'inline'},f1,f2,f3,f4,f5,f6,n1,n2,n3,n4,n5,n6,si,no
+        return children, {'display': 'none'}, {'display': 'inline'},f1,f2,f3,f4,f5,f6,n1,n2,n3,n4,n5,n6,long,si,no

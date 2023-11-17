@@ -20,18 +20,23 @@ def predict_img(model,image):
     index=prediction.argmax()
     print(class_labels[index])
 
-    inv=html.P('Felicidades, tu estacionalidad es el invierno, los colores con un croma neutral son mas lo tuyo')
+    inv_long=''
+    inv_si=html.P('Felicidades, tu estacionalidad es el invierno, los colores con un croma neutral son mas lo tuyo')
     inv_no=html.P('Por otro lado intenta evitar los colores tierra y pasteles porque te pueden opacar')
 
-    ver=html.P('Felicidades, tu estacionalidad es verano, los colores que te favorecen aquellos que tienen un chroma bajo, opacos')
+    ver_long=''
+    ver_si=html.P('Felicidades, tu estacionalidad es verano, los colores que te favorecen aquellos que tienen un chroma bajo, opacos')
     ver_no=html.P('Por otro lado intenta evitar los colores con base amarilla, dorada y el negro')
 
-    pri=html.P('Felicidades, tu estacionalidad es la primavera, los colores vivos y brillantes son lo tuyo')
+    pri_long=''
+    pri_si=html.P('Felicidades, tu estacionalidad es la primavera, los colores vivos y brillantes son lo tuyo')
     pri_no=html.P('Por otro lado intenta evitar colores tierra, pastel porque pueden opacar la luz de tu rostro')
 
-    oto=html.P('fff')
+    oto_long=''
+    oto_si=html.P('fff')
     oto_no=html.P('fff')
 
+    else_long=''
     else_si=html.P('Wow, tienes tremendo estilo, pero no logramos reconocer tu estación')
     else_no=html.P('No reconocemos tu estación, pero por tu foto a tí todo te queda bien')
 
@@ -40,7 +45,8 @@ def predict_img(model,image):
     ########################################################################
 
     if class_labels[index]=='Invierno': # Listo
-        si=inv
+        long=inv_long
+        si=inv_si
         no=inv_no
         f1={
                 'width':'60px',
@@ -180,7 +186,8 @@ def predict_img(model,image):
     ########################################################################
 
     elif class_labels[index]=='Otoño':
-        si=oto
+        long=oto_long
+        si=oto_si
         no=oto_no
         f1={
                 'width':'60px',
@@ -320,7 +327,8 @@ def predict_img(model,image):
     ########################################################################
 
     elif class_labels[index]=='Primavera': # Listo
-        si=pri
+        long=pri_long
+        si=pri_si
         no=pri_no
         f1={
                 'width':'60px',
@@ -460,7 +468,8 @@ def predict_img(model,image):
     ########################################################################
 
     elif class_labels[index]=='Verano':
-        si=ver
+        long=ver_long
+        si=ver_si
         no=ver_no
         f1={
                 'width':'60px',
@@ -600,6 +609,7 @@ def predict_img(model,image):
     ########################################################################
 
     else:
+        long=else_long
         si=else_si
         no=else_no
         f1={
@@ -754,7 +764,7 @@ def predict_img(model,image):
         }
     )
 
-    return img,f1,f2,f3,f4,f5,f6,n1,n2,n3,n4,n5,n6,si,no
+    return img,f1,f2,f3,f4,f5,f6,n1,n2,n3,n4,n5,n6,long,si,no
     
 
 
