@@ -66,7 +66,7 @@ layout = dbc.Container(
                             html.H1('Hola, lindura 😍',
                                     style={'padding-top':'5rem','padding-bottom':'1rem'}
                             ),
-                            html.P(id='descriptivo_largo',style={'text-align':'justify'}),
+                            html.P(children=[],id='descriptivo_largo',style={'text-align':'justify'}),
                             html.H3('...por lo tanto:'),
                         ],
                         width=6
@@ -106,7 +106,7 @@ layout = dbc.Container(
                                 ]
                             )
                         ),
-                        ],
+                    ],
                     width=5,
                     ),
 
